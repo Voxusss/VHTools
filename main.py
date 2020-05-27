@@ -27,7 +27,6 @@ with open("captchavalue.txt", 'r+') as capv:
 @eel.expose
 def writecaptchavalue(captchaValue, captchaValueIndex):
     with open("captchavalue.txt", "a+") as capvalue:
-        print(captchaValue)
         if (captchaValueIndex != 0):
             capvalue.write(str(captchaValue)+"/"+str(captchaValueIndex)+"\n")
 def every(delay, task):
@@ -54,7 +53,6 @@ def wala():
             lineurlindex = capa.readlines()[captchaIndex]
             urlimg=lineurlindex.split(" /")[0]
             indexCaptcha = lineurlindex.split("/ ")[1]
-            print(indexCaptcha)
             eel.captchahar(urlimg)
     with open("captchaadress.txt", "r") as capa:
         for line in capa:
@@ -153,15 +151,12 @@ def main():
         ville = string.split(';')[7]
         country = "France"
         index = len(adresse)
-        print(index)
         region = ""
         if index > 4:
             with open("regions.txt", 'r+') as fileuiop:
                 for line in fileuiop:
-                    print("oeoeoeooeoe")
                     lineid = line.split(":")[0]
                     if(lineid in cp[:2]): region = line.split(":")[1]
-                    print(region)
             print(adresse, cp, ville, country, region)
             global finished
             finished = finished + 1

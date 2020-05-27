@@ -286,12 +286,13 @@ def emailio():
     driver.find_element_by_xpath("//option[@value='"+str(year)+"']").click()
     time.sleep(2)
     driver.find_element_by_xpath("//input[@id='iSignupAction']").click()
-
-    time.sleep(4)
+    gud = 0
+    time.sleep(6)
     img = driver.find_element_by_xpath("//img[contains(@aria-label, 'Visual')][contains(@aria-label, 'Challenge')]")
     src = img.get_attribute('src')
     with open("nb.txt", 'r+') as capn:
         nbvalue = int(capn.read())
+
         nbvalue = nbvalue +1
         print(nbvalue)
         capn.seek(0)
@@ -299,6 +300,19 @@ def emailio():
         capn.write(str(nbvalue))
     with open("captchaadress.txt", 'a+') as cap:
         cap.write(src +" / "+ str(nbvalue)+"\n")
+    while True:
+        with open("captchavalue.txt") as capad:
+            linescapad = capad.readlines()
+            searchcap = "/"+str(nbvalue)
+            for line in linescapad:
+                if (searchcap in line):
+                    capfinal = line.split("/")[0]
+                    print(capfinal)
+                    gud = 1
+        if(gud==1):
+            break
+    driver.find_element_by_xpath("//input[@type='text']").send_keys(capfinal)
+    driver.find_element_by_xpath("//input[@id='iSignupAction']").click()
     element = WebDriverWait(driver, 100000).until(EC.presence_of_element_located((By.XPATH, "//a[@id='help-links-msa-info']")))
     emailwr= username+ "@outlook.com"
     with open('emails.txt', 'a+') as file:
