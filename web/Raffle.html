@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Raffles Statistics - VexTools</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/untitled.css">
+    <script type="text/javascript" src="/eel.js"></script>
+    <script>
+    function AddPending(){
+      var addentered = document.getElementById("AddEntered").value;
+      eel.add(document.getElementById("nbPending").innerHTML, addentered)().then((enteredfinal) => {
+    document.getElementById("nbPending").innerHTML = enteredfinal;
+});
+      eel.add(document.getElementById("nbEntered").innerHTML, addentered)().then((enteredfinal) => {
+      document.getElementById("nbEntered").innerHTML = enteredfinal;
+});
+
+
+    }
+    </script>
+    <script>
+    function AddLost(){
+      var addlost = document.getElementById("AddLost").value;
+      eel.add(document.getElementById("nbLost").innerHTML, addlost)().then((lostfinal) => {
+    document.getElementById("nbLost").innerHTML = lostfinal;
+});
+      eel.minus(document.getElementById("nbPending").innerHTML, addlost)().then((lost2final) => {
+      document.getElementById("nbPending").innerHTML = lost2final;
+});
+
+
+    }
+    </script>
+    <script>
+    function AddWon(){
+      var addwon = document.getElementById("AddWon").value;
+      eel.add(document.getElementById("nbWon").innerHTML, addwon)().then((wonfinal) => {
+    document.getElementById("nbWon").innerHTML = wonfinal;
+});
+      eel.minus(document.getElementById("nbPending").innerHTML, addwon)().then((won2final) => {
+      document.getElementById("nbPending").innerHTML = won2final;
+});
+
+
+    }
+    </script>
+
+</head>
+
+<body id="page-top">
+    <div id="wrapper">
+        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0" style="background-color: rgb(28,200,138);">
+            <div class="container-fluid d-flex flex-column p-0">
+                <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+                    <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-fingerprint"></i></div>
+                    <div class="sidebar-brand-text mx-3"><span>VExTools</span></div>
+                </a>
+                <hr class="sidebar-divider my-0">
+                <ul class="nav navbar-nav text-light" id="accordionSidebar">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="Address.html"><i class="fas fa-home"></i><span>Address Generator</span></a>
+                      <a class="nav-link active" href="Raffle.html" style="margin-top: 0;"><i class="fas fa-ticket-alt"></i><span>Raffles Stats</span></a>
+                      <a class="nav-link" href="Email.html" style="margin-top: 0;"><i class="far fa-envelope"></i><span>Email Generator</span></a>
+                      <a class="nav-link" href="Phone.html" style="margin-top: 0;"><i class="fas fa-phone"></i><span>Phone Number Generator</span></a></li>
+                </ul>
+                <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
+            </div>
+        </nav>
+        <div class="d-flex flex-column" id="content-wrapper">
+            <div id="content">
+                <div class="container-fluid">
+                    <div class="d-sm-flex justify-content-between align-items-center mb-4">
+                        <h3 class="text-dark mb-0" style="margin-top: -12px;"><br><strong>Raffles Statistics</strong><br><br></h3>
+                    </div>
+                    <div class="row" style="margin-top: -44px;">
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="card text-primary shadow border-left-primary py-2">
+                                <div class="card-body" style="width: 412;">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col mr-2">
+                                            <div class="text-uppercase text-primary font-weight-bold text-xs mb-1"><span class="text-primary" style="width: 229px;">Raffles entered</span></div>
+                                            <div class="text-dark font-weight-bold h5 mb-0"><span id="nbEntered">0</span></div>
+                                        </div>
+                                        <div class="col-auto"><i class="fas fa-ticket-alt fa-2x text-gray-300"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="card shadow border-left-success py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col mr-2">
+                                            <div class="text-uppercase text-success font-weight-bold text-xs mb-1"><span class="text-success">Raffles won</span></div>
+                                            <div class="text-dark font-weight-bold h5 mb-0"><span id="nbWon">0</span></div>
+                                        </div>
+                                        <div class="col-auto"><i class="fas fa-dollar-sign fa-2x text-gray-300"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="card shadow border-left-danger py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col mr-2">
+                                            <div class="text-uppercase text-success font-weight-bold text-xs mb-1"><span class="text-danger">RAFFLES LOST</span></div>
+                                            <div class="text-dark font-weight-bold h5 mb-0"><span id="nbLost">0</span></div>
+                                        </div>
+                                        <div class="col-auto"><i class="fas fa-window-close fa-2x text-gray-300"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="card shadow border-left-warning py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col mr-2">
+                                            <div class="text-uppercase text-success font-weight-bold text-xs mb-1"><span class="text-warning">RAFFLES PENDING</span></div>
+                                            <div class="text-dark font-weight-bold h5 mb-0"><span id="nbPending">0</span></div>
+                                        </div>
+                                        <div class="col-auto"><i class="fas fa-hourglass-half fa-2x text-gray-300"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 mb-4">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="text-primary font-weight-bold m-0">Upcoming Raffles</h6>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <div class="row align-items-center no-gutters">
+                                            <div class="col mr-2">
+                                                <h6 class="mb-0"><strong>Jordan 1 Retro High Game Royal Toe</strong><br></h6><a href="https://soleretriever.com/raffles/air-jordan-1-retro-high-black-game-royal-555088-041" target="_blank">Link</a></div>
+                                            <div class="col-auto">
+                                                <div class="custom-control custom-checkbox"><input class="custom-control-input" type="checkbox" id="formCheck-1"><label class="custom-control-label" for="formCheck-1"></label></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="row align-items-center no-gutters">
+                                            <div class="col mr-2">
+                                                <h6 class="mb-0"><strong>Nike SB Dunk Low Laser Orange</strong><br></h6><a href="https://soleretriever.com/raffles/nike-sb-dunk-low-laser-orange-bq6817-800" target="_blank">Link</a></div>
+                                            <div class="col-auto">
+                                                <div class="custom-control custom-checkbox"><input class="custom-control-input" type="checkbox" id="formCheck-2"><label class="custom-control-label" for="formCheck-2"></label></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="row align-items-center no-gutters">
+                                            <div class="col mr-2">
+                                                <h6 class="mb-0"><strong>Nike Air Max 90 Duck Camo Volt</strong><br></h6><a href="https://soleretriever.com/raffles/nike-air-max-90-duck-camo-volt-cw4039-300" target="_blank">Link</a></div>
+                                            <div class="col-auto">
+                                                <div class="custom-control custom-checkbox"><input class="custom-control-input" type="checkbox" id="formCheck-3"><label class="custom-control-label" for="formCheck-3"></label></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col">
+                          <input id="AddWon" class="form-control-lg" type="number" placeholder="Add Won" step="1" min="0"><button onclick="AddWon()"class="btn btn-primary" type="button" style="width: 260px;height: 27px;padding: 0;background-color: rgb(78,115,223);filter: brightness(114%) hue-rotate(280deg);margin-bottom:16px;">Add Won</button>
+                            <input class="form-control-lg" type="number" id="AddLost" placeholder="Add Lost" step="1" min="0"><button onclick="AddLost()" class="btn btn-primary" type="button" style="width: 260px;height: 27px;padding: 0;background-color: rgb(78,115,223);filter: brightness(114%) hue-rotate(280deg);margin-bottom:16px;">Add Lost</button>
+                            <input id="AddEntered" class="form-control-lg" type="number" placeholder="Add Entered" step="1" min="0">
+                                <div><button onclick="AddPending()" class="btn btn-primary" type="button" style="width: 260px;height: 27px;padding: 0;background-color: rgb(78,115,223);filter: brightness(114%) hue-rotate(280deg);">&nbsp;Add Entered</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="bg-white sticky-footer">
+                <div class="container my-auto">
+                    <div class="text-center my-auto copyright"><span><br>Copyright © VexTools 2020<br><br></span></div>
+                </div>
+            </footer>
+        </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a></div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+    <script src="assets/js/theme.js"></script>
+</body>
+
+</html>

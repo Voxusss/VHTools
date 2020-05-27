@@ -1,0 +1,2 @@
+https://eus.client.hip.live.com/GetHIPData?hid=EUS.ac467912df654b83b0f5246adbc4fa5f&fid=a51ed882bb9b42c0bc4836d6b3287401&id=15041&type=visual&cs=HIPAMFE / 1
+https://wus.client.hip.live.com/GetHIPData?hid=WUS.87f02ff476a7421b8499e67a3a80c633&fid=86bf7ac50a7f42dcb844d9de857482f2&id=15041&type=visual&cs=HIPAMFE / 2
