@@ -118,6 +118,7 @@ def alias(driver):
                 time.sleep(4)
                 driver.find_element_by_xpath("//input[@id='SubmitYes']").click()
                 time.sleep(4)
+                driver.get("https://login.live.com/logout")
         emailytu = username + "@outlook.com:"+ps2
         with open('emails+aliases.txt', 'a+') as file:
             file.write("\n" + emailytu)
@@ -126,7 +127,6 @@ def alias(driver):
         with open("emails+aliases.txt","w") as f:
             [f.write(line) for line in lines if line.strip() ]
         time.sleep(4)
-    driver.quit()
 def imap(driver):
     time.sleep(4)
     with open('password.txt') as ps2:
@@ -221,7 +221,7 @@ def emailio():
         ps2 = ps2.readline()
         ps2=ps2.split("['")[0]
     month = random.randint(1,12)
-    day = random.randint(13,30)
+    day = random.randint(13,28)
     year = random.randint(1960,1998)
     unleash = 0
     chrome_options = webdriver.ChromeOptions()
@@ -330,6 +330,7 @@ def emailio():
     element = WebDriverWait(driver, 100000).until(EC.presence_of_element_located((By.XPATH, "//span[@data-automationid='splitbuttonprimary']")))
     driver.get("https://account.microsoft.com/profile/")
     element = WebDriverWait(driver, 100000).until(EC.presence_of_element_located((By.XPATH, "//a[@cms-link='$ctrl.links.personalManageEmail']")))
+    time.sleep(4)
     element.click()
     time.sleep(10)
     driver.find_element_by_xpath("//option[@value='Email']").click()
