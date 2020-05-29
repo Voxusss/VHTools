@@ -118,6 +118,7 @@ def alias(driver):
                 time.sleep(4)
                 driver.find_element_by_xpath("//input[@id='SubmitYes']").click()
                 time.sleep(4)
+                driver.find_element_by_xpath("//odiv[@class='mectrl_header']").click()
                 driver.get("https://login.live.com/logout")
         emailytu = username + "@outlook.com:"+ps2
         with open('emails+aliases.txt', 'a+') as file:
@@ -247,6 +248,7 @@ def emailio():
         capabilities = webdriver.DesiredCapabilities.CHROME
         prox.add_to_capabilities(capabilities)
     chrome_options = webdriver.ChromeOptions()
+    chrome_options.add_extension("ab.crx")
     chrome_options.add_experimental_option("detach", True)
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument('--window-size=1920,1080')
