@@ -1,5 +1,0 @@
-https://wus.client.hip.live.com/GetHIPData?hid=WUS.c9157cfe12ed43ccb5eb48d275251ab4&fid=e92a44b972eb4407b5080d9557e481cc&id=15041&type=visual&cs=HIPAMFE / 1
-https://eus.client.hip.live.com/GetHIPData?hid=EUS.da6c97645c184569b13ceccf005d2bfd&fid=5cf80e795cb8466682bc429b7075241d&id=15041&type=visual&cs=HIPAMFE / 2
-https://wus.client.hip.live.com/GetHIPData?hid=WUS.cbe4848357d94bd8b3bc8ea47148180a&fid=94331b5da5d74e319e59ad4b279c5bb0&id=15041&type=visual&cs=HIPAMFE / 3
-https://scu.client.hip.live.com/GetHIPData?hid=SCU.700e57b203364bb8b34750227f859717&fid=02652e66d2134f0daca7689414eefa80&id=15041&type=visual&cs=HIPAMFE / 4
-https://eus.client.hip.live.com/GetHIPData?hid=EUS.6c7256ae5b9d4294b63620a41dff1428&fid=6f56d52ee65647b79298535a64c6a674&id=15041&type=visual&cs=HIPAMFE / 5

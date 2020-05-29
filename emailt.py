@@ -294,7 +294,6 @@ def emailio():
         nbvalue = int(capn.read())
 
         nbvalue = nbvalue +1
-        print(nbvalue)
         capn.seek(0)
         capn.truncate()
         capn.write(str(nbvalue))

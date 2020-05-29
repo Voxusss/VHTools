@@ -23,12 +23,18 @@
     }
     eel.expose(updateCaptchaNb)
     function updateCaptchaNb(captchaNb){
-      document.getElementById("captchaNbText").innerHTML = "Captcha Harvester : "+done+"/" + captchaNb
+      document.getElementById("captchaNbText").innerHTML = "Captcha Harvester : "+affiched+"/" + captchaNb
     }
     done = 0
+    affiched = 0
+    eel.expose(setaffiched)
+    function setaffiched(){
+      affiched = 1
+    }
     eel.expose(addDone)
     function addDone(){
       captchaValue = document.getElementById('captchaValue').value
+      affiched = affiched +1
       done = done+1
       eel.writecaptchavalue(captchaValue, done)
       eel.updateCapIndex()

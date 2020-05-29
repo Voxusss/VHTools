@@ -36,7 +36,7 @@ def every(delay, task):
     try:
       task()
     except Exception:
-      traceback.print_exc()
+      pass
       # in production code you might want to have this instead of course:
       # logger.exception("Problem while executing repetitive task.")
     # skip tasks if we are behind schedule:
@@ -45,11 +45,18 @@ def every(delay, task):
 def updateCapIndex():
     global captchaIndex
     captchaIndex = captchaIndex+1
+lineurlindex = ''
+settedaf = 0
 def wala():
     nbcaptchas = 0
     urlimg = ""
     with open("captchaadress.txt", "r") as capa:
         if (os.stat("captchaadress.txt").st_size != 0):
+            global settedaf
+            if(settedaf==0):
+                eel.setaffiched()
+                settedaf = 1
+            global lineurlindex
             lineurlindex = capa.readlines()[captchaIndex]
             urlimg=lineurlindex.split(" /")[0]
             indexCaptcha = lineurlindex.split("/ ")[1]
@@ -155,8 +162,10 @@ def main():
         if index > 4:
             with open("regions.txt", 'r+') as fileuiop:
                 for line in fileuiop:
+                    print("oeoeoeooeoe")
                     lineid = line.split(":")[0]
                     if(lineid in cp[:2]): region = line.split(":")[1]
+                    print(region)
             print(adresse, cp, ville, country, region)
             global finished
             finished = finished + 1
