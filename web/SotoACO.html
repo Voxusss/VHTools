@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Dashboard - Brand</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/Toggle-Switch-1.css">
+    <link rel="stylesheet" href="assets/css/Toggle-Switch.css">
+    <link rel="stylesheet" href="assets/css/untitled.css">
+    <script type="text/javascript" src="/eel.js"></script>
+    <script>
+      p = document.getElementById("node1");
+      console.log(p)
+      p_prime = p.cloneNode(true);
+      console.log(p_prime)
+    </script>
+</head>
+
+<body id="page-top">
+    <div id="wrapper">
+        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0" style="background-color: rgb(28,200,138);">
+            <div class="container-fluid d-flex flex-column p-0">
+                <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+                    <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-fingerprint"></i></div>
+                    <div class="sidebar-brand-text mx-3"><span>VExTools</span></div>
+                </a>
+                <hr class="sidebar-divider my-0">
+                <ul class="nav navbar-nav text-light" id="accordionSidebar">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="Address.html"><i class="fas fa-home"></i><span>Address Generator</span></a>
+                      <a class="nav-link" href="Raffle.html" style="margin-top: 0;"><i class="fas fa-ticket-alt"></i><span>Raffles Stats</span></a>
+                      <a class="nav-link" href="Email.html" style="margin-top: 0;"><i class="far fa-envelope"></i><span>Email Generator</span></a>
+                      <a class="nav-link" href="Phone.html" style="margin-top: 0;"><i class="fas fa-phone"></i><span>Phone Number Generator</span></a>
+                      <a class="nav-link" href="EmailTester.html" style="margin-top: 0;"><i class="fas fa-user-check"></i><span>Email Tester</span></a>
+                      <a class="nav-link active" href="SotoACO.html" style="margin-top: 0;"><i class="fas fa-shopping-cart"></i><span>Soto ACO</span></a></li>
+                </ul>
+                <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
+            </div>
+        </nav>
+        <div class="d-flex flex-column" id="content-wrapper">
+            <div id="content">
+                <div class="container-fluid">
+                    <div class="d-sm-flex justify-content-between align-items-center mb-4">
+                        <h3 class="text-dark mb-0" style="margin-top: -12px;"><br><strong>Soto ACO</strong><br><br></h3>
+                    </div>
+                    <div class="row" style="margin-top: -63px;margin-bottom: 35px;">
+                        <div class="col" style="margin-top: 20px;margin-bottom: -5px;"><textarea class="d-block" style="width: 645px;height: 49px;" spellcheck="false" placeholder="Paste your link here : "></textarea></div>
+                        <div class="col" style="margin-top: 9px;"><button class="btn btn-primary btn-lg" type="button" style="margin-top: 12px;background-color: rgb(28,200,138);width: 225px;margin-left: 29;padding-left: 16px;margin-right: -2px;">Add Task</button></div>
+                    </div>
+                    <div id="node1" class="col-md-6 col-xl-3 mb-4" style="margin: -12px;margin-top: -20px;margin-left: -12px;margin-bottom: 41px;">
+                        <div class="card shadow border-left-warning py-2" id="content" style="width: 897px;height: 63px;">
+                            <div class="card-body" style="width: 217px;margin-top: -11px;height: 90px;">
+                                <div class="row align-items-center no-gutters" style="width: 816px;">
+                                    <div class="col mr-2" style="margin-right: 0px;width: 711px;">
+                                        <div class="text-uppercase text-success font-weight-bold text-xs mb-1" style="width: 557px;height: 37px;"><span class="text-warning" style="width: 1120px;height: -10px;">Task 1 : <a href="https://www.sotostore.com/en/product/20081/chuck-taylor-allstar-70-hi">https://www.sotostore.com/en/product/20081/chuck-taylor-allstar-70hi</a><br><span class="text-success" style="width: 1120px;height: -10px;">STATUS : SUCCESS!<br></span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: -4px;">
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="card shadow border-left-success py-2" id="content">
+                                <div class="card-body" style="width: 217px;">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col mr-2">
+                                            <div class="text-uppercase text-success font-weight-bold text-xs mb-1"><span class="text-success">Carts</span></div>
+                                            <div class="text-dark font-weight-bold h5 mb-0"><span id="Generateds">0</span></div>
+                                        </div>
+                                        <div class="col-auto"><i class="fas fa-cart-plus fa-2x text-gray-300"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="card shadow border-left-success py-2" id="content">
+                                <div class="card-body" style="width: 217px;">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col mr-2">
+                                            <div class="text-uppercase text-success font-weight-bold text-xs mb-1"><span class="text-success">CHECKOUTS</span></div>
+                                            <div class="text-dark font-weight-bold h5 mb-0"><span id="Generateds">0</span></div>
+                                        </div>
+                                        <div class="col-auto"><i class="fas fa-money-check-alt fa-2x text-gray-300"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="card shadow border-left-danger py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col mr-2">
+                                            <div class="text-uppercase text-success font-weight-bold text-xs mb-1"><span class="text-danger">ERRORS</span></div>
+                                            <div class="text-dark font-weight-bold h5 mb-0"><span id="Invalids">0</span></div>
+                                        </div>
+                                        <div class="col-auto"><i class="fas fa-window-close fa-2x text-gray-300"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="bg-white sticky-footer">
+                <div class="container my-auto">
+                    <div class="text-center my-auto copyright"><span>Copyright © VexTools 2020</span></div>
+                </div>
+            </footer>
+        </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a></div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+    <script src="assets/js/theme.js"></script>
+</body>
+
+</html>

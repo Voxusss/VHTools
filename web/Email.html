@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Dashboard - Brand</title>
+    <title>Email Generator - VHTools</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
@@ -17,6 +17,7 @@
     }
     </script>
     <script>
+    eel.init()
     eel.expose(captchahar)
     function captchahar(urlimg){
       document.getElementById("captchaharvest").src = urlimg
@@ -39,6 +40,11 @@
       eel.writecaptchavalue(captchaValue, done)
       eel.updateCapIndex()
     }
+    eel.expose(output2);
+    function output2(createdemails){
+      document.getElementById("Generateds").innerHTML = createdemails
+      console.log("yyyy")
+    }
     </script>
 </head>
 
@@ -48,7 +54,7 @@
             <div class="container-fluid d-flex flex-column p-0">
                 <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
                     <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-fingerprint"></i></div>
-                    <div class="sidebar-brand-text mx-3"><span>VExTools</span></div>
+                    <div class="sidebar-brand-text mx-3"><span>VHTools</span></div>
                 </a>
                 <hr class="sidebar-divider my-0">
                 <ul class="nav navbar-nav text-light" id="accordionSidebar">
@@ -56,7 +62,8 @@
                       <a class="nav-link" href="Raffle.html" style="margin-top: 0;"><i class="fas fa-ticket-alt"></i><span>Raffles Stats</span></a>
                       <a class="nav-link active" href="Email.html" style="margin-top: 0;"><i class="far fa-envelope"></i><span>Email Generator</span></a>
                       <a class="nav-link" href="Phone.html" style="margin-top: 0;"><i class="fas fa-phone"></i><span>Phone Number Generator</span></a>
-                      <a class="nav-link" href="EmailTester.html" style="margin-top: 0;"><i class="fas fa-user-check"></i><span>Email Tester</span></a></li>
+                      <a class="nav-link" href="EmailTester.html" style="margin-top: 0;"><i class="fas fa-user-check"></i><span>Email Tester</span></a>
+                      <a class="nav-link" href="SotoACO.html" style="margin-top: 0;"><i class="fas fa-shopping-cart"></i><span>Soto ACO</span></a></li>
                 </ul>
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
             </div>
